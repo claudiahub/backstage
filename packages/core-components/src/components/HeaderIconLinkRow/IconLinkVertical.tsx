@@ -27,7 +27,9 @@ export type IconLinkVerticalProps = {
   icon?: React.ReactNode;
   label: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  ariaDescribedBy?: string;
   title?: string;
+  role?: string;
 };
 
 /** @public */
@@ -75,6 +77,8 @@ export function IconLinkVertical({
   label,
   onClick,
   title,
+  role = 'link',
+  ariaDescribedBy = 'new-window',
 }: IconLinkVerticalProps) {
   const classes = useIconStyles();
 
@@ -98,6 +102,8 @@ export function IconLinkVertical({
       to={href}
       component={RouterLink}
       onClick={onClick}
+      aria-describedby={ariaDescribedBy}
+      role={role}
     >
       {icon}
       <span className={classes.label}>{label}</span>

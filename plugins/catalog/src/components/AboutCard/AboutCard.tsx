@@ -101,6 +101,7 @@ export function AboutCard(props: AboutCardProps) {
 
   const viewInSource: IconLinkVerticalProps = {
     label: 'View Source',
+    role: 'link',
     disabled: !entitySourceLocation,
     icon: <ScmIntegrationIcon type={entitySourceLocation?.integrationType} />,
     href: entitySourceLocation?.locationTargetUrl,
@@ -163,6 +164,7 @@ export function AboutCard(props: AboutCardProps) {
               aria-label="Edit"
               disabled={!entityMetadataEditUrl}
               title="Edit Metadata"
+              role="link"
               to={entityMetadataEditUrl ?? '#'}
             >
               <EditIcon />
